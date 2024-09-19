@@ -47,17 +47,15 @@ function calculoFator(){
         resultadoCartao.innerHTML = `<h2>Nenhum valor foi digitado!</h2>`
         resultadoCarne.innerHTML = ''
     } else {
-        for(let i = 0; i <= fatorCartao.length - 1; i++){
-        let valorParcelado = valor * fatorCartao[i]
-        let valorComJuros = valorParcelado * (i+1)
-        resultadoCartao.innerHTML += `<p>${i+1} x ${valorParcelado.toFixed(2)} = ${valorComJuros.toFixed(2)}</p>`
-    }
-
-    
-    for(let i = 0; i <= fatorCarne.length - 1; i++){
-        let valorParcelado = valor * fatorCarne[i]
-        let valorComJuros = valorParcelado * (i+1)
-        resultadoCarne.innerHTML += `<p>${i+1} x ${valorParcelado.toFixed(2)} = ${valorComJuros.toFixed(2)}</p>`
-    }
+            for(let i = 0; i <= fatorCartao.length - 1; i++){
+            let valorParcelado = valor * fatorCartao[i]
+            let valorComJuros = valorParcelado * (i+1)
+            resultadoCartao.innerHTML += `<p>${i+1} x ${valorParcelado.toFixed(2)} = ${valorComJuros.toFixed(2)}</p>`
+        }
+        for(let i = 0; i <= fatorCarne.length - 1; i++){
+            let valorParcelado = valor * fatorCarne[i]
+            let valorComJuros = valorParcelado * (i+1)
+            resultadoCarne.innerHTML += `<p>${i+1} x ${valorParcelado.toFixed(2)} = ${valorComJuros.toFixed(2)}</p>`
+        }
     }
 }
