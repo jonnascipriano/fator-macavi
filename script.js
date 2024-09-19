@@ -1,3 +1,4 @@
+// Valor do juros de cada parcela do cartão
 let fatorCartao = [
     1.0293, //1
     0.5221, //2
@@ -13,6 +14,7 @@ let fatorCartao = [
     0.1000  //12
 ]
 
+// Valor do juros de cada parcela do carnê
 let fatorCarne = [
     1.0484, //1
     0.5366, //2
@@ -30,12 +32,17 @@ let fatorCarne = [
     0.1000  //14
 ]
 
+// Mostra o parcelamento na tela ao clicar no botão "Calcular"
 function calculoFator(){
+    // Retorna o valor digitado para ser calculado
     let valor = document.getElementById('valor').value
+    // Retorna a section referente aos resultados do cartão
     let resultadoCartao = document.querySelector('section div#resultado-cartao')
     resultadoCartao.innerHTML = '<h2>Valor de parcelas do Cartão</h2>'
+    // Retorna a section referente aos resultados do carnê
     let resultadoCarne = document.querySelector('section div#resultado-carne')
     resultadoCarne.innerHTML = '<h2>Valor de parcelas do Carnê</h2>'
+    // Verifica se o campo está vazio
     if(valor == ''){
         resultadoCartao.innerHTML = `<h2>Nenhum valor foi digitado!</h2>`
         resultadoCarne.innerHTML = ''
@@ -43,7 +50,6 @@ function calculoFator(){
         for(let i = 0; i <= fatorCartao.length - 1; i++){
         let valorParcelado = valor * fatorCartao[i]
         let valorComJuros = valorParcelado * (i+1)
-        // console.log(`${i+1}x${valorParcelado.toFixed(2)} = ${valorComJuros.toFixed(2)}`)
         resultadoCartao.innerHTML += `<p>${i+1} x ${valorParcelado.toFixed(2)} = ${valorComJuros.toFixed(2)}</p>`
     }
 
