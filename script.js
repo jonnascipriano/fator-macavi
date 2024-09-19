@@ -33,20 +33,20 @@ let fatorCarne = [
 function calculoFator(){
     let valor = document.getElementById('valor').value
     let resultadoCartao = document.querySelector('section div#resultado-cartao')
-    resultadoCartao.innerHTML = 'Valor de parcelas do Cartão'
+    resultadoCartao.innerHTML = '<h2>Valor de parcelas do Cartão</h2>'
 
     for(let i = 0; i <= fatorCartao.length - 1; i++){
         let valorParcelado = valor * fatorCartao[i]
         let valorComJuros = valorParcelado * (i+1)
         // console.log(`${i+1}x${valorParcelado.toFixed(2)} = ${valorComJuros.toFixed(2)}`)
-        resultadoCartao.innerHTML += `<p>${i+1}x${valorParcelado.toFixed(2)} = ${valorComJuros.toFixed(2)}</p>`
+        resultadoCartao.innerHTML += `<p>${i+1} x ${valorParcelado.toFixed(2)} = ${valorComJuros.toFixed(2)}</p>`
     }
 
     let resultadoCarne = document.querySelector('section div#resultado-carne')
-    resultadoCarne.innerHTML = 'Valor de parcelas do Carnê'
+    resultadoCarne.innerHTML = '<h2>Valor de parcelas do Carnê</h2>'
     for(let i = 0; i <= fatorCarne.length - 1; i++){
         let valorParcelado = valor * fatorCarne[i]
         let valorComJuros = valorParcelado * (i+1)
-        resultadoCarne.innerHTML += `<p>${i+1}x${valorParcelado.toFixed(2)} = ${valorComJuros.toFixed(2)}</p>`
+        resultadoCarne.innerHTML += `<p>${i+1} x ${valorParcelado.toFixed(2)} = ${valorComJuros.toFixed(2)}</p>`
     }
 }
