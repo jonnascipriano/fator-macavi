@@ -35,13 +35,52 @@ let fatorCarne = [
 // Mostra o parcelamento na tela ao clicar no botão "Calcular"
 function calculoFator(){
     // Retorna o valor digitado para ser calculado
-    let valor = document.getElementById('valor').value
+    let valor = Number(document.getElementById('valor').value)
+    let valorGarantia = Number(document.getElementById('valorGarantia').value)
+
+    let valorTac
+    let valorCurso
+    let valorTaxaEntrega
+
+    // Retorna o valor do TAC
+    if(document.querySelector('input#tacSim').checked){
+        valorTac = 38
+    } else {
+        valorTac = 0
+    }
+
+    if(document.querySelector('input#pass0').checked){
+        valorCurso = 0
+    } else if (document.querySelector('input#pass1').checked){
+        valorCurso = 90
+    } else if (document.querySelector('input#pass2').checked){
+        valorCurso = 120
+    } else if (document.querySelector('input#pass3').checked){
+        valorCurso = 297
+    }
+
+    if(document.querySelector('input#semTaxa').checked){
+        valorTaxaEntrega = 0
+    } else if(document.querySelector('input#entregaSobral').checked){
+        valorTaxaEntrega = 50
+    } else if(document.querySelector('input#entregaOutrasCidades').checked){
+        valorTaxaEntrega = 150
+    }
+
+    valor = valor + valorTac + valorCurso + valorTaxaEntrega
+    valor = valor + valorGarantia
+
+
     // Retorna a section referente aos resultados do cartão
     let resultadoCartao = document.querySelector('section div#resultado-cartao')
     resultadoCartao.innerHTML = '<h2>Valor de parcelas do Cartão</h2>'
+
+
     // Retorna a section referente aos resultados do carnê
     let resultadoCarne = document.querySelector('section div#resultado-carne')
     resultadoCarne.innerHTML = '<h2>Valor de parcelas do Carnê</h2>'
+
+
     // Verifica se o campo está vazio
     if(valor == ''){
         resultadoCartao.innerHTML = `<h2>Nenhum valor foi digitado!</h2>`

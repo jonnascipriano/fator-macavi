@@ -16,13 +16,68 @@
     </header>
     <main>
         <section id="form-calcular">
-            <input type="number" name="valor" id="valor" placeholder="Digite o valor a ser calculado">
+            <label for="valor">
+                <h3>Valor do produto:</h3>
+                <input type="number" name="valor" id="valor" placeholder="Digite o valor a ser calculado">
+            </label>
+
+            <label for="valorGarantia">
+                <h3>Valor da garantia:</h3>
+                <input type="number" name="valorGarantia" id="valorGarantia" placeholder="Digite o valor da garantia">
+            </label>
+
+            <div id="tac-container" class="adicionais-container">
+                <h3>Adicionar TAC?</h3>
+                <div id="tac" class="adicionais">
+                    <label for="tacSim">Sim
+                        <input type="radio" name="tac" id="tacSim" value="38">
+                    </label>
+                    <label for="tacNao">Não
+                        <input type="radio" name="tac" id="tacNao" value="0" checked>
+                    </label>
+                </div>
+            </div>
+            <div id="pass-container" class="adicionais-container">
+                <h3>Pass(Cursos)</h3>
+                <div id="pass" class="adicionais">
+                    <label for="pass0">Nenhum
+                        <input type="radio" name="pass" id="pass0" checked>
+                    </label>
+                    <label for="pass1">R$90,00
+                        <input type="radio" name="pass" id="pass1">
+                    </label>
+                    <label for="pass2">R$120,00
+                        <input type="radio" name="pass" id="pass2">
+                    </label>
+                    <label for="pass3">R$297,00
+                        <input type="radio" name="pass" id="pass3">
+                    </label>
+                </div>
+            </div>
+
+            <div id="taxa-entrega-container" class="adicionais-container">
+                <h3>Taxa de entrega</h3>
+                <div id="taxa-entrega" class="adicionais">
+                    <label for="semTaxa">Sem taxa
+                        <input type="radio" name="taxaEntrega" id="semTaxa" value="0">
+                    </label>
+                    <label for="entregaSobral">Entrega Sobral - R$50,00
+                        <input type="radio" name="taxaEntrega" id="entregaSobral" value="50" checked>
+                    </label>
+                    <label for="entregaOutrasCidades">Entrega outras cidades - R$150,00
+                        <input type="radio" name="taxaEntrega" id="entregaOutrasCidades" value="150">
+                    </label>
+                </div>
+            </div>
+
             <button onclick="calculoFator()">Calcular</button>
         </section>
 
         <section id="resultados">
-            <div id="resultado-cartao"></div>
-            <div id="resultado-carne"></div>
+            <div id="resultados-box">
+                <div id="resultado-cartao"></div>
+                <div id="resultado-carne"></div>
+            </div>
         </section>
 
     </main>

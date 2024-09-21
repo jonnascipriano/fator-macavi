@@ -19,10 +19,16 @@ body{
 
 #form-calcular{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
+}
+
+#form-calcular label{
+    text-align: center;
+    padding: 5px;
 }
 
 #form-calcular input{
@@ -39,6 +45,46 @@ body{
     height: 2rem;
     border: none;
     border-radius: 5px;
+}
+
+
+.adicionais-container{
+    margin-top: 15px;
+    padding: 15px;
+    border-top: 1px #FFF100 solid;
+}
+
+.adicionais-container h3{
+    text-align: center;
+}
+
+.adicionais{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.adicionais label{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 15px;
+}
+
+#tac input{
+    width: 1.5rem;
+}
+
+#pass input{
+    width: 1.5rem;
+}
+
+#taxa-entrega input{
+    width: 1.5rem;
 }
 
 #resultados{
@@ -61,9 +107,15 @@ body{
     color: #FFF100;
 }
 
+#resultados-box{
+    display: flex;
+    margin: auto;
+}
+
 footer{
-    font-size: 0.7rem;
-    color: white;
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
+    font-size: 0.5rem;
+    color: white;
 }
