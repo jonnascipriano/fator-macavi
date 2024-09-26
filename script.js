@@ -1,3 +1,5 @@
+alert('CUIDADO! Não confie 100%, sempre verifique no sistema da Macavi!')
+
 // Valor do juros de cada parcela do cartão
 let fatorCartao = [
     1.0293, //1
